@@ -1,0 +1,23 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "article-mv": {
+      "type": "article-mv",
+      "settings": {
+        "img": "shopify://shop_images/barista-pours-over-coffee-at-cafe.jpg",
+        "alt": "メインビジュアル画像"
+      }
+    }
+  },
+  "order": [
+    "article-mv"
+  ]
+}

@@ -1,0 +1,31 @@
+<section class="mv">
+  <div class="content">
+    <figure class="padding-LR">
+      <img
+        src="{{ section.settings.img | image_url }}"
+        alt="{{ section.settings.alt }}"
+        width="100%"
+        height="auto"
+        loading="lazy"
+      >
+    </figure>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "ブログ記事：メインビジュアル",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "img",
+        "label": "メインビジュアル画像"
+      },
+      {
+        "type": "textarea",
+        "id": "alt",
+        "label": "メインビジュアル代替テキスト"
+      }
+    ]
+  }
+{% endschema %}
