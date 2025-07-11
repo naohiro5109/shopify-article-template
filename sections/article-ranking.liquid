@@ -1,0 +1,66 @@
+<section class="ranking padding-bottom">
+  <div class="content padding-LR">
+    <div class="title">
+      <h2>定期便ランキング</h2>
+    </div>
+    <ul class="col2">
+      {% for block in section.blocks %}
+        <li class="item-list">
+          <figure>
+            <img
+              src="{{ block.settings.image | image_url }}"
+              alt="{{ block.settings.alt }}"
+              width="100%"
+              height="auto"
+              loading="lazy"
+            >
+          </figure>
+          <h3>{{ block.settings.item }}</h3>
+          <p class="item-list-price">￥{{ block.settings.price }}（税込）</p>
+          <p class="item-list-text">{{ block.settings.text }}</p>
+          <a href="" class="item-list-button">{{ block.settings.button }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "ブログ記事：ランキング",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "ranking",
+        "name": "ランキング",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "商品画像"
+          },
+          {
+            "type": "textarea",
+            "id": "item",
+            "label": "商品名"
+          },
+          {
+            "type": "textarea",
+            "id": "price",
+            "label": "価格"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "商品説明テキスト"
+          },
+          {
+            "type": "textarea",
+            "id": "button",
+            "label": "ボタンテキスト"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

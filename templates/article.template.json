@@ -87,11 +87,64 @@
         "step_z64RF3"
       ],
       "settings": {}
+    },
+    "article-ranking": {
+      "type": "article-ranking",
+      "blocks": {
+        "ranking-item1": {
+          "type": "ranking",
+          "settings": {
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+        "ranking-item2": {
+          "type": "ranking",
+          "settings": {
+            "image": "shopify://shop_images/coffee-and-cake.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+        "ranking-item3": {
+          "type": "ranking",
+          "settings": {
+            "image": "shopify://shop_images/long-espresso-sits-on-a-wooden-stool.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+        "ranking-item4": {
+          "type": "ranking",
+          "settings": {
+            "image": "shopify://shop_images/cafe-cup-on-wood-table.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        }
+      },
+      "block_order": [
+        "ranking-item1",
+        "ranking-item2",
+        "ranking-item3",
+        "ranking-item4"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "article-mv",
     "article-heading",
-    "article-step"
+    "article-step",
+    "article-ranking"
   ]
 }
