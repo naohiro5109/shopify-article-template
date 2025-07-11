@@ -22,6 +22,45 @@
   </div>
 </section>
 
+{% style %}
+  .padding-bottom {
+    padding-bottom: 100px;
+  }
+  .padding-LR {
+    padding: 0 14px;
+  }
+  .content {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  h1 {
+    padding-bottom: 20px;
+  }
+  .heading {
+    margin: 20px 0;
+  }
+  .heading-wrapper {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+  .heading-textWrap h3 {
+    padding-bottom: 20px;
+  }
+  .heading-listWrap li {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    .padding-bottom {
+      padding-bottom: 50px;
+    }
+    .heading-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
 {% schema %}
   {
     "name": "ブログ記事: 見出し",

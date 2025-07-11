@@ -19,6 +19,35 @@
   </div>
 </section>
 
+{% style %}
+  /* common */
+  .padding-bottom {
+    padding-bottom: 100px;
+  }
+  .padding-LR {
+    padding: 0 14px;
+  }
+  .content {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .col3 {
+    display: grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .padding-bottom {
+      padding-bottom: 50px;
+    }
+    .col3 {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
 {% schema %}
   {
     "name": "ブログ記事：ステップ",

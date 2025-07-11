@@ -104,7 +104,7 @@
         "ranking-item2": {
           "type": "ranking",
           "settings": {
-            "image": "shopify://shop_images/coffee-and-cake.jpg",
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "price": "780",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
@@ -114,7 +114,7 @@
         "ranking-item3": {
           "type": "ranking",
           "settings": {
-            "image": "shopify://shop_images/long-espresso-sits-on-a-wooden-stool.jpg",
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "price": "780",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
@@ -124,7 +124,7 @@
         "ranking-item4": {
           "type": "ranking",
           "settings": {
-            "image": "shopify://shop_images/cafe-cup-on-wood-table.jpg",
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "price": "780",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
@@ -207,12 +207,56 @@
             "button": "button"
           }
         },
+        "new-item5": {
+          "type": "new-item",
+          "settings": {
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+        "new-item6": {
+          "type": "new-item",
+          "settings": {
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+        "new-item7": {
+          "type": "new-item",
+          "settings": {
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+        "new-item8": {
+          "type": "new-item",
+          "settings": {
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        }
       },
       "block_order": [
         "new-item1",
         "new-item2",
         "new-item3",
-        "new-item4"
+        "new-item4",
+        "new-item5",
+        "new-item6",
+        "new-item7",
+        "new-item8"
       ],
       "settings": {}
     }

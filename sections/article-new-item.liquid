@@ -5,7 +5,7 @@
     </div>
     <ul class="col4">
       {% for block in section.blocks %}
-        <li class="item-list">
+        <li class="item-list js-item-list">
           <figure>
             <img
               src="{{ block.settings.image | image_url }}"
@@ -22,8 +22,129 @@
         </li>
       {% endfor %}
     </ul>
+    <div class="more-button-wrapper">
+      <button class="more-button js-more-button">もっと見る</button>
+    </div>
   </div>
 </section>
+
+{% style %}
+  /* common */
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+  figure {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+  .padding-bottom {
+    padding-bottom: 100px;
+  }
+  .padding-LR {
+    padding: 0 14px;
+  }
+  .content {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  .col4 {
+    display: grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  /* item list */
+  .item-list-price {
+    padding-bottom: 10px;
+  }
+  .item-list-text {
+    padding-bottom: 14px;
+  }
+  .item-list-button {
+    padding: 10px 24px;
+    width: 100%;
+    background-color: #D9D9D9;
+  }
+
+  /* more button */
+  .more-button-wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .more-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+  }
+  .more-button::after {
+    content: "";
+    display: block;
+    margin-top: 6px;
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #AAAAAA;
+    border-right: 3px solid #AAAAAA;
+    transform: translateY(-50%) rotate(135deg);
+  }
+  .hidden {
+    display: none;
+  }
+  .more-button.open::after {
+    margin-top: 14px;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  @media screen and (max-width: 768px) {
+    .padding-bottom {
+      padding-bottom: 50px;
+    }
+    .col4 {
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+  }
+{% endstyle %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', ()=> {
+    const moreButtons = document.querySelectorAll('.js-more-button');
+    const itemLists = document.querySelectorAll('.js-item-list');
+
+    if (itemLists.length && moreButtons.length) {
+      itemLists.forEach((itemList, index) => {
+        if (index > 3) {
+          itemList.classList.add('hidden');
+          moreButtons.forEach((moreButton) => {
+            moreButton.addEventListener('click', () => {
+              if (itemList.classList.contains('hidden')) {
+                itemList.classList.remove('hidden');
+                moreButton.classList.add('open');
+              } else {
+                itemList.classList.add('hidden');
+                moreButton.classList.remove('open');
+              }
+            });
+          });
+        }
+      });
+    };
+  });
+</script>
 
 {% schema %}
   {

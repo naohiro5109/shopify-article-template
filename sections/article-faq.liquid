@@ -20,6 +20,132 @@
   </div>
 </section>
 
+{% style %}
+  /* common */
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+  figure {
+    margin: 0;
+  }
+  .padding-bottom {
+    padding-bottom: 100px;
+  }
+  .padding-LR {
+    padding: 0 14px;
+  }
+  .content {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  /* accordion */
+  .accordion {
+    padding: 0 20px;
+    border: 1px solid #DFDFDF;
+  }
+  .accordion + .accordion {
+    margin-top: 20px;
+  }
+  .accordion-head {
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+    padding: 20px 32px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+  }
+  .accordion-head span {
+    position: relative;
+  }
+  .accordion-head::before {
+    content: "Q.";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    transform: translateY(-50%);
+  }
+  .accordion-head::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #AAAAAA;
+    border-right: 1px solid #AAAAAA;
+    transform: translateY(-50%) rotate(135deg);
+    transition: all 0.3s;
+  }
+  .accordion.is-open .accordion-head::after {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  .accordion-body {
+    opacity: 0;
+    overflow: hidden;
+    position: relative;
+    padding: 0 32px;
+    padding-bottom: 0;
+    height: 0;
+    font-size: 16px;
+    border-top: 1px solid #DFDFDF;
+    transition: all 0.2s;
+  }
+  .accordion-body-inner {
+    padding: 20px 0;
+  }
+  .accordion.is-open .accordion-body {
+    opacity: 1;
+  }
+  .accordion-body ul {
+    margin: 10px 0;
+  }
+  .accordion-body p + p {
+    margin-top: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .padding-bottom {
+      padding-bottom: 50px;
+    }
+    .heading-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', ()=> {
+    const accordions = document.querySelectorAll('.js-accordion');
+    if(accordions.length){
+      accordions.forEach((accordion) => {
+        const accordionHead = accordion.querySelector('.accordion-head');
+        const accordionBody = accordion.querySelector('.accordion-body');
+        accordionHead.addEventListener('click', ()=> {
+          if(!accordion.classList.contains('is-open')){
+            accordion.classList.add('is-open');
+            accordionBody.style.height = accordionBody.scrollHeight + 'px'
+          }else {
+            accordion.classList.remove('is-open');
+            accordionBody.style.height = 0
+          }
+        })
+      })
+    }
+  })
+</script>
+
 {% schema %}
   {
     "name": "ブログ記事：FAQ",
