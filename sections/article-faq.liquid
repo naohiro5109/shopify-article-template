@@ -1,0 +1,46 @@
+<section class="faq padding-bottom">
+  <div class="content padding-LR">
+    <div class="title">
+      <h2>FAQ</h2>
+    </div>
+    <ul class="p-faq-accordion">
+      {% for block in section.blocks %}
+        <li class="accordion js-accordion">
+          <button class="accordion-head">
+            <span>{{ block.settings.title }}</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-body-inner">
+              <p>{{ block.settings.text }}</p>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "ブログ記事：FAQ",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "faq",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "タイトル"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "テキスト"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
