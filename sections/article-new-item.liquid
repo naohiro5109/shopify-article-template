@@ -1,11 +1,11 @@
-<section class="ranking {{ section.id }}-article-wrapper">
-  <div class="content padding-LR">
+<section class="{{ section.id }}-article-wrapper">
+  <div class="{{ section.id }}-article-cont">
     {% render 'article-title',
       title: section.settings.title
     %}
-    <ul class="col4">
+    <ul class="{{ section.id }}-col4">
       {% for block in section.blocks %}
-        <li class="item-list js-item-list">
+        <li class="{{ section.id }}-item-list {{ section.id }}-js-item-list">
           <a href="{{ block.settings.url }}">
             <figure>
               <img
@@ -31,7 +31,7 @@
                 color: {{ block.settings.price_font_color }};
                 font-weight: {{ block.settings.price_font_weight }};
               "
-              class="item-list-price"
+              class="{{ section.id }}-item-list-price"
             >
               ￥{{ block.settings.price }}（税込）
             </p>
@@ -41,7 +41,7 @@
                 color: {{ block.settings.text_font_color }};
                 font-weight: {{ block.settings.text_font_weight }};
               "
-              class="item-list-text"
+              class="{{ section.id }}-item-list-text"
             >
               {{ block.settings.text }}
             </p>
@@ -51,7 +51,7 @@
                 color: {{ block.settings.button_font_color }};
                 font-weight: {{ block.settings.button_font_weight }};
               "
-              class="item-list-button"
+              class="{{ section.id }}-item-list-button"
             >
               {{ block.settings.button }}
             </button>
@@ -59,8 +59,8 @@
         </li>
       {% endfor %}
     </ul>
-    <div class="more-button-wrapper">
-      <button class="more-button js-more-button">もっと見る</button>
+    <div class="{{ section.id }}-more-button-wrapper">
+      <button class="{{ section.id }}-more-button {{ section.id }}-js-more-button">もっと見る</button>
     </div>
   </div>
 </section>
@@ -95,20 +95,19 @@
   .{{ section.id }}-article-wrapper {
     padding-bottom: {{ section.settings.padding_bottom_pc }}px;
   }
-  .padding-LR {
-    padding: 0 14px;
-  }
-  .content {
+  .{{ section.id }}-article-cont {
     margin: 0 auto;
+    padding-left: 14px;
+    padding-right: 14px;
     max-width: 1200px;
   }
-  .col4 {
+  .{{ section.id }}-col4 {
     display: grid;
     grid-template-columns:repeat(4, minmax(0, 1fr));
     gap: 20px;
   }
 
-  .title {
+  .{{ section.id }}-title {
     padding: 20px 0;
     padding-left: 14px;
     margin-bottom: 40px;
@@ -116,32 +115,32 @@
   }
 
   /* item list */
-  .item-list-price {
+  .{{ section.id }}-item-list-price {
     padding-bottom: 10px;
   }
-  .item-list-text {
+  .{{ section.id }}-item-list-text {
     padding-bottom: 14px;
   }
-  .item-list-button {
+  .{{ section.id }}-item-list-button {
     padding: 10px 24px;
     background-color: #D9D9D9;
   }
 
   /* more button */
-  .more-button-wrapper {
+  .{{ section.id }}-more-button-wrapper {
     display: flex;
     justify-content: center;
     text-align: center;
     padding-top: 20px;
   }
-  .more-button {
+  .{{ section.id }}-more-button {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     font-weight: 500;
   }
-  .more-button::after {
+  .{{ section.id }}-more-button::after {
     content: "";
     display: block;
     margin-top: 6px;
@@ -154,7 +153,7 @@
   .hidden {
     display: none;
   }
-  .more-button.open::after {
+  .{{ section.id }}-more-button.open::after {
     margin-top: 14px;
     transform: translateY(-50%) rotate(-45deg);
   }
@@ -163,11 +162,11 @@
     .{{ section.id }}-article-wrapper {
       padding-bottom: {{ section.settings.padding_bottom_sp }}px;
     }
-    .col4 {
+    .{{ section.id }}-col4 {
       grid-template-columns:repeat(2, minmax(0, 1fr));
     }
 
-    .title {
+    .{{ section.id }}-title {
       margin-left: -14px;
       margin-right: -14px;
     }
@@ -176,8 +175,8 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', ()=> {
-    const moreButtons = document.querySelectorAll('.js-more-button');
-    const itemLists = document.querySelectorAll('.js-item-list');
+    const moreButtons = document.querySelectorAll('.{{ section.id }}-js-more-button');
+    const itemLists = document.querySelectorAll('.{{ section.id }}-js-item-list');
 
     if (itemLists.length && moreButtons.length) {
       itemLists.forEach((itemList, index) => {

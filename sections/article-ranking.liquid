@@ -1,11 +1,11 @@
-<section class="ranking {{ section.id }}-article-wrapper">
-  <div class="content padding-LR">
+<section class="{{ section.id }}-article-wrapper">
+  <div class="{{ section.id }}-article-cont">
     {% render 'article-title',
       title: section.settings.title
     %}
-    <ul class="col2">
+    <ul class="{{ section.id }}-col2">
       {% for block in section.blocks %}
-        <li class="item-list">
+        <li class="{{ section.id }}-item-list">
           <a href="{{ block.settings.url }}">
             <figure>
               <img
@@ -31,7 +31,7 @@
                 color: {{ block.settings.price_font_color }};
                 font-weight: {{ block.settings.price_font_weight }};
               "
-              class="item-list-price"
+              class="{{ section.id }}-item-list-price"
             >
               ￥{{ block.settings.price }}（税込）
             </p>
@@ -41,7 +41,7 @@
                 color: {{ block.settings.text_font_color }};
                 font-weight: {{ block.settings.text_font_weight }};
               "
-              class="item-list-text"
+              class="{{ section.id }}-item-list-text"
             >
               {{ block.settings.text }}
             </p>
@@ -51,7 +51,7 @@
                 color: {{ block.settings.button_font_color }};
                 font-weight: {{ block.settings.button_font_weight }};
               "
-              class="item-list-button"
+              class="{{ section.id }}-item-list-button"
             >
               {{ block.settings.button }}
             </button>
@@ -87,20 +87,19 @@
   .{{ section.id }}-article-wrapper {
     padding-bottom: {{ section.settings.padding_bottom_pc }}px;
   }
-  .padding-LR {
-    padding: 0 14px;
-  }
-  .content {
+  .{{ section.id }}-article-cont {
     margin: 0 auto;
+    padding-left: 14px;
+    padding-right: 14px;
     max-width: 1200px;
   }
-  .col2 {
+  .{{ section.id }}-col2 {
     display: grid;
     grid-template-columns:repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
 
-  .title {
+  .{{ section.id }}-title {
     padding: 20px 0;
     padding-left: 14px;
     margin-bottom: 40px;
@@ -108,13 +107,13 @@
   }
 
   /* item list */
-  .item-list-price {
+  .{{ section.id }}-item-list-price {
     padding-bottom: 10px;
   }
-  .item-list-text {
+  .{{ section.id }}-item-list-text {
     padding-bottom: 14px;
   }
-  .item-list-button {
+  .{{ section.id }}-item-list-button {
     padding: 10px 24px;
     background-color: #D9D9D9;
   }
@@ -124,7 +123,7 @@
       padding-bottom: {{ section.settings.padding_bottom_sp }}px;
     }
 
-    .title {
+    .{{ section.id }}-title {
       margin-left: -14px;
       margin-right: -14px;
     }

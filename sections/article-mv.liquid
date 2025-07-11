@@ -1,6 +1,6 @@
 <section class="mv">
-  <div class="content">
-    <figure class="padding-LR">
+  <div class="{{ section.id }}-article-cont">
+    <figure>
       <img
         src="{{ section.settings.img | image_url }}"
         alt="{{ section.settings.alt }}"
@@ -13,11 +13,9 @@
 </section>
 
 {% style %}
-  .padding-LR {
-    padding: 0 14px;
-  }
-  .content {
+  .{{ section.id }}-article-cont {
     margin: 0 auto;
+    padding: 0 14px;
     max-width: 1200px;
   }
 {% endstyle %}

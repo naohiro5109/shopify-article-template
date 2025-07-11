@@ -1,6 +1,6 @@
-<section class="heading {{ section.id }}-article-wrapper">
-  <div class="content">
-    <div class="heading-wrapper padding-LR">
+<section class="{{ section.id }}-heading {{ section.id }}-article-wrapper">
+  <div class="{{ section.id }}-article-cont">
+    <div class="{{ section.id }}-heading-col2">
       <figure>
         <img
           src="{{ section.settings.image | image_url }}"
@@ -10,8 +10,9 @@
           loading="lazy"
         >
       </figure>
-      <div class="heading-textWrap">
+      <div>
         <h1
+          class="{{ section.id }}-heading-h1"
           style="
             font-size: {{ section.settings.title_font_size }}px;
             color: {{ section.settings.title_font_color }};
@@ -20,7 +21,7 @@
         >
           {{ section.settings.title }}
         </h1>
-        <ul class="heading-listWrap">
+        <ul>
           {% for block in section.blocks %}
             <li
               style="
@@ -39,40 +40,36 @@
 </section>
 
 {% style %}
+  /* common */
   .{{ section.id }}-article-wrapper {
     padding-bottom: {{ section.settings.padding_bottom_pc }}px;
   }
-  .padding-LR {
-    padding: 0 14px;
-  }
-  .content {
+  .{{ section.id }}-article-cont {
     margin: 0 auto;
+    padding-left: 14px;
+    padding-right: 14px;
     max-width: 1200px;
   }
-  h1 {
-    margin: 0;
-    padding-bottom: 20px;
-  }
-  .heading {
+
+  /* heading */
+  .{{ section.id }}-heading {
     margin: 20px 0;
   }
-  .heading-wrapper {
+  .{{ section.id }}-heading-col2 {
     display: grid;
     grid-template-columns: 60% 1fr;
     align-items: center;
     gap: 20px;
   }
-  .heading-textWrap h3 {
+  .{{ section.id }}-heading-h1 {
+    margin: 0;
     padding-bottom: 20px;
   }
-  .heading-listWrap li {
-    font-size: 20px;
-  }
   @media screen and (max-width: 768px) {
-  .{{ section.id }}-article-wrapper {
-    padding-bottom: {{ section.settings.padding_bottom_sp }}px;
-  }
-    .heading-wrapper {
+    .{{ section.id }}-article-wrapper {
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
+    }
+    .{{ section.id }}-heading-col2 {
       grid-template-columns: 1fr;
     }
   }

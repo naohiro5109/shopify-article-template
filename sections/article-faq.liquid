@@ -1,29 +1,29 @@
-<section class="faq {{ section.id }}-article-wrapper">
-  <div class="content padding-LR">
+<section class="{{ section.id }}-article-wrapper">
+  <div class="{{ section.id }}-article-cont">
     {% render 'article-title',
       title: section.settings.title
     %}
-    <ul class="p-faq-accordion">
+    <ul>
       {% for block in section.blocks %}
-        <li class="accordion js-accordion">
+        <li class="{{ section.id }}-accordion {{ section.id }}-js-accordion">
           <button
             style="
               font-size: {{ block.settings.title_font_size }}px;
               color: {{ block.settings.title_font_color }};
               font-weight: {{ block.settings.title_font_weight }};
             "
-            class="accordion-head"
+            class="{{ section.id }}-accordion-head"
           >
             <span>{{ block.settings.title }}</span>
           </button>
-          <div class="accordion-body">
+          <div class="{{ section.id }}-accordion-body">
             <div
               style="
                 font-size: {{ block.settings.text_font_size }}px;
                 color: {{ block.settings.text_font_color }};
                 font-weight: {{ block.settings.text_font_weight }};
               "
-              class="accordion-body-inner"
+              class="{{ section.id }}-accordion-body-inner"
             >
               <p>{{ block.settings.text }}</p>
             </div>
@@ -49,15 +49,14 @@
   .{{ section.id }}-article-wrapper {
     padding-bottom: {{ section.settings.padding_bottom_pc }}px;
   }
-  .padding-LR {
-    padding: 0 14px;
-  }
-  .content {
+  .{{ section.id }}-article-cont {
     margin: 0 auto;
+    padding-left: 14px;
+    padding-right: 14px;
     max-width: 1200px;
   }
 
-  .title {
+  .{{ section.id }}-title {
     padding: 20px 0;
     padding-left: 14px;
     margin-bottom: 40px;
@@ -65,14 +64,14 @@
   }
 
   /* accordion */
-  .accordion {
+  .{{ section.id }}-accordion {
     padding: 0 20px;
     border: 1px solid #DFDFDF;
   }
-  .accordion + .accordion {
+  .{{ section.id }}-accordion + .{{ section.id }}-accordion {
     margin-top: 20px;
   }
-  .accordion-head {
+  .{{ section.id }}-accordion-head {
     cursor: pointer;
     position: relative;
     text-align: left;
@@ -81,10 +80,10 @@
     background-color: transparent;
     border: none;
   }
-  .accordion-head span {
+  .{{ section.id }}-accordion-head span {
     position: relative;
   }
-  .accordion-head::before {
+  .{{ section.id }}-accordion-head::before {
     content: "Q.";
     position: absolute;
     top: 50%;
@@ -94,7 +93,7 @@
     line-height: 1;
     transform: translateY(-50%);
   }
-  .accordion-head::after {
+  .{{ section.id }}-accordion-head::after {
     content: "";
     display: block;
     position: absolute;
@@ -107,10 +106,10 @@
     transform: translateY(-50%) rotate(135deg);
     transition: all 0.3s;
   }
-  .accordion.is-open .accordion-head::after {
+  .{{ section.id }}-accordion.is-open .{{ section.id }}-accordion-head::after {
     transform: translateY(-50%) rotate(-45deg);
   }
-  .accordion-body {
+  .{{ section.id }}-accordion-body {
     opacity: 0;
     overflow: hidden;
     position: relative;
@@ -120,16 +119,16 @@
     border-top: 1px solid #DFDFDF;
     transition: all 0.2s;
   }
-  .accordion-body-inner {
+  .{{ section.id }}-accordion-body-inner {
     padding: 20px 0;
   }
-  .accordion.is-open .accordion-body {
+  .{{ section.id }}-accordion.is-open .{{ section.id }}-accordion-body {
     opacity: 1;
   }
-  .accordion-body ul {
+  .{{ section.id }}-accordion-body ul {
     margin: 10px 0;
   }
-  .accordion-body p + p {
+  .{{ section.id }}-accordion-body p + p {
     margin-top: 10px;
   }
 
@@ -137,23 +136,20 @@
     .{{ section.id }}-article-wrapper {
       padding-bottom: {{ section.settings.padding_bottom_sp }}px;
     }
-    .title {
+    .{{ section.id }}-title {
       margin-left: -14px;
       margin-right: -14px;
-    }
-    .heading-wrapper {
-      grid-template-columns: 1fr;
     }
   }
 {% endstyle %}
 
 <script>
   document.addEventListener('DOMContentLoaded', ()=> {
-    const accordions = document.querySelectorAll('.js-accordion');
+    const accordions = document.querySelectorAll('.{{ section.id }}-js-accordion');
     if(accordions.length){
       accordions.forEach((accordion) => {
-        const accordionHead = accordion.querySelector('.accordion-head');
-        const accordionBody = accordion.querySelector('.accordion-body');
+        const accordionHead = accordion.querySelector('.{{ section.id }}-accordion-head');
+        const accordionBody = accordion.querySelector('.{{ section.id }}-accordion-body');
         accordionHead.addEventListener('click', ()=> {
           if(!accordion.classList.contains('is-open')){
             accordion.classList.add('is-open');

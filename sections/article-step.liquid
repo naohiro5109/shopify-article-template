@@ -1,9 +1,9 @@
-<section class="step {{ section.id }}-article-wrapper">
-  <div class="content padding-LR">
+<section class="{{ section.id }}-article-wrapper">
+  <div class="{{ section.id }}-article-cont">
     {% render 'article-title',
       title: section.settings.title
     %}
-    <div class="col3">
+    <div class="{{ section.id }}-col3">
       {% for block in section.blocks %}
         <figure>
           <img
@@ -24,20 +24,19 @@
   .{{ section.id }}-article-wrapper {
     padding-bottom: {{ section.settings.padding_bottom_pc }}px;
   }
-  .padding-LR {
-    padding: 0 14px;
-  }
-  .content {
+  .{{ section.id }}-article-cont {
     margin: 0 auto;
+    padding-left: 14px;
+    padding-right: 14px;
     max-width: 1200px;
   }
-  .col3 {
+  .{{ section.id }}-col3 {
     display: grid;
     grid-template-columns:repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
 
-  .title {
+  .{{ section.id }}-title {
     padding: 20px 0;
     padding-left: 14px;
     margin-bottom: 40px;
@@ -48,11 +47,11 @@
     .{{ section.id }}-article-wrapper {
       padding-bottom: {{ section.settings.padding_bottom_sp }}px;
     }
-    .col3 {
+    .{{ section.id }}-col3 {
       grid-template-columns: 1fr;
     }
 
-    .title {
+    .{{ section.id }}-title {
       margin-left: -14px;
       margin-right: -14px;
     }
