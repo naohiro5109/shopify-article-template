@@ -163,6 +163,58 @@
         "faq_ythe3G"
       ],
       "settings": {}
+    },
+    "article-new-item": {
+      "type": "article-new-item",
+      "blocks": {
+        "new-item1": {
+          "type": "new-item",
+          "settings": {
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+        "new-item2": {
+          "type": "new-item",
+          "settings": {
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+        "new-item3": {
+          "type": "new-item",
+          "settings": {
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+        "new-item4": {
+          "type": "new-item",
+          "settings": {
+            "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
+            "item": "item",
+            "price": "780",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "button": "button"
+          }
+        },
+      },
+      "block_order": [
+        "new-item1",
+        "new-item2",
+        "new-item3",
+        "new-item4"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -170,6 +222,7 @@
     "article-heading",
     "article-step",
     "article-ranking",
-    "article-faq"
+    "article-faq",
+    "article-new-item"
   ]
 }
