@@ -1,4 +1,4 @@
-<section class="faq padding-bottom">
+<section class="faq {{ section.id }}-article-wrapper">
   <div class="content padding-LR">
     {% render 'article-title',
       title: section.settings.title
@@ -46,8 +46,8 @@
   figure {
     margin: 0;
   }
-  .padding-bottom {
-    padding-bottom: 100px;
+  .{{ section.id }}-article-wrapper {
+    padding-bottom: {{ section.settings.padding_bottom_pc }}px;
   }
   .padding-LR {
     padding: 0 14px;
@@ -134,8 +134,8 @@
   }
 
   @media screen and (max-width: 768px) {
-    .padding-bottom {
-      padding-bottom: 50px;
+    .{{ section.id }}-article-wrapper {
+      padding-bottom: {{ section.settings.padding_bottom_sp }}px;
     }
     .title {
       margin-left: -14px;
@@ -176,6 +176,24 @@
         "type": "textarea",
         "id": "title",
         "label": "セクションタイトル"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_pc",
+        "label": "下部パディング(PC)",
+        "max": 100,
+        "min": 0,
+        "step": 5,
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_sp",
+        "label": "下部パディング(SP)",
+        "max": 100,
+        "min": 0,
+        "step": 5,
+        "default": 50
       }
     ],
     "blocks": [
