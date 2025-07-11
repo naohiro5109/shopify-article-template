@@ -1,0 +1,59 @@
+<section class="heading padding-bottom">
+  <div class="content">
+    <div class="heading-wrapper padding-LR">
+      <figure>
+        <img
+          src="{{ section.settings.image | image_url }}"
+          alt="{{ section.settings.alt }}"
+          width="100%"
+          height="auto"
+          loading="lazy"
+        >
+      </figure>
+      <div class="heading-textWrap">
+        <h1>{{ section.settings.title }}</h1>
+        <ul class="heading-listWrap">
+          {% for block in section.blocks %}
+            <li>{{ block.settings.list }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "ブログ記事: 見出し",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "画像"
+      },
+      {
+        "type": "textarea",
+        "id": "alt",
+        "label": "画像代替テキスト"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "タイトル"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "textarea",
+        "name": "リスト",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "list",
+            "label": "リスト"
+          }
+        ],
+      }
+    ]
+  }
+{% endschema %}
