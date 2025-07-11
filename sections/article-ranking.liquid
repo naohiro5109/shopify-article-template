@@ -1,8 +1,8 @@
 <section class="ranking padding-bottom">
   <div class="content padding-LR">
-    <div class="title">
-      <h2>定期便ランキング</h2>
-    </div>
+    {% render 'article-title',
+      title: section.settings.title
+    %}
     <ul class="col2">
       {% for block in section.blocks %}
         <li class="item-list">
@@ -57,6 +57,13 @@
     gap: 20px;
   }
 
+  .title {
+    padding: 20px 0;
+    padding-left: 14px;
+    margin-bottom: 40px;
+    background-color: #D9D9D9;
+  }
+
   /* item list */
   .item-list-price {
     padding-bottom: 10px;
@@ -80,7 +87,13 @@
 {% schema %}
   {
     "name": "ブログ記事：ランキング",
-    "settings": [],
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "セクションタイトル"
+      }
+    ],
     "blocks": [
       {
         "type": "ranking",

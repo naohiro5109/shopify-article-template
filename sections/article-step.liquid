@@ -1,8 +1,8 @@
 <section class="step padding-bottom">
   <div class="content padding-LR">
-    <div class="title">
-      <h2>登録ステップ</h2>
-    </div>
+    {% render 'article-title',
+      title: section.settings.title
+    %}
     <div class="col3">
       {% for block in section.blocks %}
         <figure>
@@ -31,11 +31,17 @@
     margin: 0 auto;
     max-width: 1200px;
   }
-
   .col3 {
     display: grid;
     grid-template-columns:repeat(3, minmax(0, 1fr));
     gap: 20px;
+  }
+
+  .title {
+    padding: 20px 0;
+    padding-left: 14px;
+    margin-bottom: 40px;
+    background-color: #D9D9D9;
   }
 
   @media screen and (max-width: 768px) {
@@ -51,7 +57,13 @@
 {% schema %}
   {
     "name": "ブログ記事：ステップ",
-    "settings": [],
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "セクションタイトル"
+      }
+    ],
     "blocks": [
       {
         "type": "step",
