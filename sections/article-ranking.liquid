@@ -6,19 +6,56 @@
     <ul class="col2">
       {% for block in section.blocks %}
         <li class="item-list">
-          <figure>
-            <img
-              src="{{ block.settings.image | image_url }}"
-              alt="{{ block.settings.alt }}"
-              width="100%"
-              height="auto"
-              loading="lazy"
+          <a href="{{ block.settings.url }}">
+            <figure>
+              <img
+                src="{{ block.settings.image | image_url }}"
+                alt="{{ block.settings.alt }}"
+                width="100%"
+                height="auto"
+                loading="lazy"
+              >
+            </figure>
+            <h3
+              style="
+                font-size: {{ block.settings.item_font_size }}px;
+                color: {{ block.settings.item_font_color }};
+                font-weight: {{ block.settings.item_font_weight }};
+              "
             >
-          </figure>
-          <h3>{{ block.settings.item }}</h3>
-          <p class="item-list-price">￥{{ block.settings.price }}（税込）</p>
-          <p class="item-list-text">{{ block.settings.text }}</p>
-          <a href="" class="item-list-button">{{ block.settings.button }}</a>
+              {{ block.settings.item }}
+            </h3>
+            <p
+              style="
+                font-size: {{ block.settings.price_font_size }}px;
+                color: {{ block.settings.price_font_color }};
+                font-weight: {{ block.settings.price_font_weight }};
+              "
+              class="item-list-price"
+            >
+              ￥{{ block.settings.price }}（税込）
+            </p>
+            <p
+              style="
+                font-size: {{ block.settings.text_font_size }}px;
+                color: {{ block.settings.text_font_color }};
+                font-weight: {{ block.settings.text_font_weight }};
+              "
+              class="item-list-text"
+            >
+              {{ block.settings.text }}
+            </p>
+            <button
+              style="
+                font-size: {{ block.settings.button_font_size }}px;
+                color: {{ block.settings.button_font_color }};
+                font-weight: {{ block.settings.button_font_weight }};
+              "
+              class="item-list-button"
+            >
+              {{ block.settings.button }}
+            </button>
+          </a>
         </li>
       {% endfor %}
     </ul>
@@ -35,6 +72,12 @@
     list-style: none;
   }
   figure {
+    margin: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+  p {
     margin: 0;
   }
   a {
@@ -73,13 +116,17 @@
   }
   .item-list-button {
     padding: 10px 24px;
-    width: 100%;
     background-color: #D9D9D9;
   }
 
   @media screen and (max-width: 768px) {
     .padding-bottom {
       padding-bottom: 50px;
+    }
+
+    .title {
+      margin-left: -14px;
+      margin-right: -14px;
     }
   }
 {% endstyle %}
@@ -100,6 +147,11 @@
         "name": "ランキング",
         "settings": [
           {
+            "type": "textarea",
+            "id": "url",
+            "label": "商品詳細の遷移先(URL)"
+          },
+          {
             "type": "image_picker",
             "id": "image",
             "label": "商品画像"
@@ -110,9 +162,61 @@
             "label": "商品名"
           },
           {
+            "type": "range",
+            "id": "item_font_size",
+            "label": "フォントサイズ",
+            "min": 14,
+            "max": 32,
+            "default": 16,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "item_font_color",
+            "label": "文字色",
+            "default": "#000000"
+          },
+          {
+            "type": "select",
+            "id": "item_font_weight",
+            "label": "フォント太さ",
+            "options": [
+              { "value": "400", "label": "細字" },
+              { "value": "500", "label": "ノーマル" },
+              { "value": "700", "label": "太字" }
+            ],
+            "default": "400"
+          },
+          {
             "type": "textarea",
             "id": "price",
             "label": "価格"
+          },
+          {
+            "type": "range",
+            "id": "price_font_size",
+            "label": "フォントサイズ",
+            "min": 14,
+            "max": 32,
+            "default": 16,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "price_font_color",
+            "label": "文字色",
+            "default": "#000000"
+          },
+          {
+            "type": "select",
+            "id": "price_font_weight",
+            "label": "フォント太さ",
+            "options": [
+              { "value": "400", "label": "細字" },
+              { "value": "500", "label": "ノーマル" },
+              { "value": "700", "label": "太字" }
+            ],
+            "default": "400"
           },
           {
             "type": "textarea",
@@ -120,9 +224,61 @@
             "label": "商品説明テキスト"
           },
           {
+            "type": "range",
+            "id": "text_font_size",
+            "label": "フォントサイズ",
+            "min": 14,
+            "max": 32,
+            "default": 16,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "text_font_color",
+            "label": "文字色",
+            "default": "#000000"
+          },
+          {
+            "type": "select",
+            "id": "text_font_weight",
+            "label": "フォント太さ",
+            "options": [
+              { "value": "400", "label": "細字" },
+              { "value": "500", "label": "ノーマル" },
+              { "value": "700", "label": "太字" }
+            ],
+            "default": "400"
+          },
+          {
             "type": "textarea",
             "id": "button",
             "label": "ボタンテキスト"
+          },
+          {
+            "type": "range",
+            "id": "button_font_size",
+            "label": "フォントサイズ",
+            "min": 14,
+            "max": 32,
+            "default": 16,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "button_font_color",
+            "label": "文字色",
+            "default": "#000000"
+          },
+          {
+            "type": "select",
+            "id": "button_font_weight",
+            "label": "フォント太さ",
+            "options": [
+              { "value": "400", "label": "細字" },
+              { "value": "500", "label": "ノーマル" },
+              { "value": "700", "label": "太字" }
+            ],
+            "default": "400"
           }
         ]
       }

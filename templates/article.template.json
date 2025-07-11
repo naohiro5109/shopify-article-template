@@ -22,25 +22,37 @@
         "textarea_WfVtNH": {
           "type": "textarea",
           "settings": {
-            "list": "初回無料"
+            "list": "・初回無料",
+            "list_font_size": 16,
+            "list_font_color": "#000000",
+            "list_font_weight": "400"
           }
         },
         "textarea_n8pb94": {
           "type": "textarea",
           "settings": {
-            "list": "2回目～5%OFF"
+            "list": "・2回目～5%OFF",
+            "list_font_size": 16,
+            "list_font_color": "#000000",
+            "list_font_weight": "400"
           }
         },
         "textarea_eWDxBd": {
           "type": "textarea",
           "settings": {
-            "list": "お客様に合わせたお届けサイクル"
+            "list": "・お客様に合わせたお届けサイクル",
+            "list_font_size": 16,
+            "list_font_color": "#000000",
+            "list_font_weight": "400"
           }
         },
         "textarea_VnWqwj": {
           "type": "textarea",
           "settings": {
-            "list": "4か月以降に解約可能/手数料なし"
+            "list": "・4か月以降に解約可能/手数料なし",
+            "list_font_size": 16,
+            "list_font_color": "#000000",
+            "list_font_weight": "400"
           }
         }
       },
@@ -53,7 +65,10 @@
       "settings": {
         "image": "shopify://shop_images/retail-shopping-package.jpg",
         "alt": "見出しセクション画像",
-        "title": "定期便がお得です"
+        "title": "定期便がお得です",
+        "title_font_size": 24,
+        "title_font_color": "#000000",
+        "title_font_weight": "500"
       }
     },
     "article-step": {
@@ -96,41 +111,93 @@
         "ranking-item1": {
           "type": "ranking",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "500",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "500",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "ranking-item2": {
           "type": "ranking",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "500",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "500",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "ranking-item3": {
           "type": "ranking",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "500",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "500",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "ranking-item4": {
           "type": "ranking",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "500",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "500",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         }
       },
@@ -151,14 +218,26 @@
           "type": "faq",
           "settings": {
             "title": "title",
-            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。\nテキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
+            "title_font_size": 24,
+            "title_font_color": "#000000",
+            "title_font_weight": "500",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。\nテキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400"
           }
         },
         "faq_ythe3G": {
           "type": "faq",
           "settings": {
             "title": "title",
-            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。\nテキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
+            "title_font_size": 24,
+            "title_font_color": "#000000",
+            "title_font_weight": "500",
+            "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。\nテキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400"
           }
         }
       },
@@ -176,81 +255,185 @@
         "new-item1": {
           "type": "new-item",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "500",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "500",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "new-item2": {
           "type": "new-item",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "500",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "500",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "new-item3": {
           "type": "new-item",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "400",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "400",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "new-item4": {
           "type": "new-item",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "400",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "400",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "new-item5": {
           "type": "new-item",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "400",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "400",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "new-item6": {
           "type": "new-item",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "400",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "400",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "new-item7": {
           "type": "new-item",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "400",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "400",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         },
         "new-item8": {
           "type": "new-item",
           "settings": {
+            "url": "",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
+            "item_font_size": 24,
+            "item_font_color": "#000000",
+            "item_font_weight": "400",
             "price": "780",
+            "price_font_size": 16,
+            "price_font_color": "#000000",
+            "price_font_weight": "400",
             "text": "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。",
-            "button": "button"
+            "text_font_size": 16,
+            "text_font_color": "#000000",
+            "text_font_weight": "400",
+            "button": "button",
+            "button_font_size": 16,
+            "button_font_color": "#000000",
+            "button_font_weight": "400"
           }
         }
       },

@@ -6,11 +6,25 @@
     <ul class="p-faq-accordion">
       {% for block in section.blocks %}
         <li class="accordion js-accordion">
-          <button class="accordion-head">
+          <button
+            style="
+              font-size: {{ block.settings.title_font_size }}px;
+              color: {{ block.settings.title_font_color }};
+              font-weight: {{ block.settings.title_font_weight }};
+            "
+            class="accordion-head"
+          >
             <span>{{ block.settings.title }}</span>
           </button>
           <div class="accordion-body">
-            <div class="accordion-body-inner">
+            <div
+              style="
+                font-size: {{ block.settings.text_font_size }}px;
+                color: {{ block.settings.text_font_color }};
+                font-weight: {{ block.settings.text_font_weight }};
+              "
+              class="accordion-body-inner"
+            >
               <p>{{ block.settings.text }}</p>
             </div>
           </div>
@@ -64,8 +78,6 @@
     text-align: left;
     padding: 20px 32px;
     width: 100%;
-    font-size: 16px;
-    font-weight: bold;
     background-color: transparent;
     border: none;
   }
@@ -105,7 +117,6 @@
     padding: 0 32px;
     padding-bottom: 0;
     height: 0;
-    font-size: 16px;
     border-top: 1px solid #DFDFDF;
     transition: all 0.2s;
   }
@@ -125,6 +136,10 @@
   @media screen and (max-width: 768px) {
     .padding-bottom {
       padding-bottom: 50px;
+    }
+    .title {
+      margin-left: -14px;
+      margin-right: -14px;
     }
     .heading-wrapper {
       grid-template-columns: 1fr;
@@ -174,9 +189,61 @@
             "label": "FAQタイトル"
           },
           {
+            "type": "range",
+            "id": "title_font_size",
+            "label": "フォントサイズ",
+            "min": 14,
+            "max": 32,
+            "default": 16,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "title_font_color",
+            "label": "文字色",
+            "default": "#000000"
+          },
+          {
+            "type": "select",
+            "id": "title_font_weight",
+            "label": "フォント太さ",
+            "options": [
+              { "value": "400", "label": "細字" },
+              { "value": "500", "label": "ノーマル" },
+              { "value": "700", "label": "太字" }
+            ],
+            "default": "400"
+          },
+          {
             "type": "textarea",
             "id": "text",
             "label": "FAQテキスト"
+          },
+          {
+            "type": "range",
+            "id": "text_font_size",
+            "label": "フォントサイズ",
+            "min": 14,
+            "max": 32,
+            "default": 16,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "text_font_color",
+            "label": "文字色",
+            "default": "#000000"
+          },
+          {
+            "type": "select",
+            "id": "text_font_weight",
+            "label": "フォント太さ",
+            "options": [
+              { "value": "400", "label": "細字" },
+              { "value": "500", "label": "ノーマル" },
+              { "value": "700", "label": "太字" }
+            ],
+            "default": "400"
           }
         ]
       }

@@ -11,10 +11,26 @@
         >
       </figure>
       <div class="heading-textWrap">
-        <h1>{{ section.settings.title }}</h1>
+        <h1
+          style="
+            font-size: {{ section.settings.title_font_size }}px;
+            color: {{ section.settings.title_font_color }};
+            font-weight: {{ section.settings.title_font_weight }};
+          "
+        >
+          {{ section.settings.title }}
+        </h1>
         <ul class="heading-listWrap">
           {% for block in section.blocks %}
-            <li>{{ block.settings.list }}</li>
+            <li
+              style="
+                font-size: {{ block.settings.list_font_size }}px;
+                color: {{ block.settings.list_font_color }};
+                font-weight: {{ block.settings.list_font_weight }};
+              "
+            >
+              {{ block.settings.list }}
+            </li>
           {% endfor %}
         </ul>
       </div>
@@ -34,6 +50,7 @@
     max-width: 1200px;
   }
   h1 {
+    margin: 0;
     padding-bottom: 20px;
   }
   .heading {
@@ -79,6 +96,32 @@
         "type": "textarea",
         "id": "title",
         "label": "タイトル"
+      },
+      {
+        "type": "range",
+        "id": "title_font_size",
+        "label": "フォントサイズ",
+        "min": 14,
+        "max": 32,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "title_font_color",
+        "label": "文字色",
+        "default": "#000000"
+      },
+      {
+        "type": "select",
+        "id": "title_font_weight",
+        "label": "フォント太さ",
+        "options": [
+          { "value": "400", "label": "細字" },
+          { "value": "500", "label": "ノーマル" },
+          { "value": "700", "label": "太字" }
+        ],
+        "default": "400"
       }
     ],
     "blocks": [
@@ -90,6 +133,32 @@
             "type": "textarea",
             "id": "list",
             "label": "リスト"
+          },
+          {
+            "type": "range",
+            "id": "list_font_size",
+            "label": "フォントサイズ",
+            "min": 14,
+            "max": 32,
+            "default": 16,
+            "unit": "px"
+          },
+          {
+            "type": "color",
+            "id": "list_font_color",
+            "label": "文字色",
+            "default": "#000000"
+          },
+          {
+            "type": "select",
+            "id": "list_font_weight",
+            "label": "フォント太さ",
+            "options": [
+              { "value": "400", "label": "細字" },
+              { "value": "500", "label": "ノーマル" },
+              { "value": "700", "label": "太字" }
+            ],
+            "default": "400"
           }
         ],
       }
