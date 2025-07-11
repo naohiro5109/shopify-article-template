@@ -1,0 +1,45 @@
+<section class="step padding-bottom">
+  <div class="content padding-LR">
+    <div class="title">
+      <h2>登録ステップ</h2>
+    </div>
+    <div class="col3">
+      {% for block in section.blocks %}
+        <figure>
+          <img
+            src="{{ block.settings.image | image_url }}"
+            alt="{{ block.settings.alt }}"
+            width="100%"
+            height="auto"
+            loading="lazy"
+          >
+        </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "ブログ記事：ステップ",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "step",
+        "name": "ステップ",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "ステップ画像"
+          },
+          {
+            "type": "textarea",
+            "id": "alt",
+            "label": "ステップ画像代替テキスト"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -55,10 +55,43 @@
         "alt": "見出しセクション画像",
         "title": "定期便がお得です"
       }
+    },
+    "article-step": {
+      "type": "article-step",
+      "blocks": {
+        "step_gTGEBj": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step1.png",
+            "alt": "商品を選ぶ"
+          }
+        },
+        "step_MxebRx": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step2.png",
+            "alt": "スケジュールを選択"
+          }
+        },
+        "step_z64RF3": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/step3.png",
+            "alt": "ご購入"
+          }
+        }
+      },
+      "block_order": [
+        "step_gTGEBj",
+        "step_MxebRx",
+        "step_z64RF3"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "article-mv",
-    "article-heading"
+    "article-heading",
+    "article-step"
   ]
 }
