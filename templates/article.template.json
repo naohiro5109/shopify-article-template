@@ -86,7 +86,9 @@
         "step_MxebRx",
         "step_z64RF3"
       ],
-      "settings": {}
+      "settings": {
+        "title": "登録ステップ"
+      }
     },
     "article-ranking": {
       "type": "article-ranking",
@@ -138,7 +140,9 @@
         "ranking-item3",
         "ranking-item4"
       ],
-      "settings": {}
+      "settings": {
+        "title": "定期便ランキング"
+      }
     },
     "article-faq": {
       "type": "article-faq",
@@ -162,7 +166,9 @@
         "faq_cfXrzB",
         "faq_ythe3G"
       ],
-      "settings": {}
+      "settings": {
+        "title": "FAQ"
+      }
     },
     "article-new-item": {
       "type": "article-new-item",
@@ -258,7 +264,9 @@
         "new-item7",
         "new-item8"
       ],
-      "settings": {}
+      "settings": {
+        "title": "新着商品"
+      }
     }
   },
   "order": [
