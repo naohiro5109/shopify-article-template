@@ -1,14 +1,16 @@
 <section class="mv">
   <div class="{{ section.id }}-article-cont">
-    <figure>
-      <img
-        src="{{ section.settings.img | image_url }}"
-        alt="{{ section.settings.alt }}"
-        width="100%"
-        height="auto"
-        loading="lazy"
-      >
-    </figure>
+    {%- if section.settings.img or section.settings.alt != blank -%}
+      <figure>
+        <img
+          src="{{ section.settings.img | image_url }}"
+          alt="{{ section.settings.alt }}"
+          width="100%"
+          height="auto"
+          loading="lazy"
+        >
+      </figure>
+    {%- endif -%}
   </div>
 </section>
 

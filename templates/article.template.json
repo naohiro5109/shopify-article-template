@@ -68,7 +68,9 @@
         "title": "定期便がお得です",
         "title_font_size": 24,
         "title_font_color": "#000000",
-        "title_font_weight": "500"
+        "title_font_weight": "500",
+        "padding_bottom_pc": 100,
+        "padding_bottom_sp": 50
       }
     },
     "article-step": {
@@ -102,7 +104,9 @@
         "step_z64RF3"
       ],
       "settings": {
-        "title": "登録ステップ"
+        "title": "登録ステップ",
+        "padding_bottom_pc": 100,
+        "padding_bottom_sp": 50
       }
     },
     "article-ranking": {
@@ -111,7 +115,7 @@
         "ranking-item1": {
           "type": "ranking",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -134,7 +138,7 @@
         "ranking-item2": {
           "type": "ranking",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -157,7 +161,7 @@
         "ranking-item3": {
           "type": "ranking",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -180,7 +184,7 @@
         "ranking-item4": {
           "type": "ranking",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -208,7 +212,9 @@
         "ranking-item4"
       ],
       "settings": {
-        "title": "定期便ランキング"
+        "title": "定期便ランキング",
+        "padding_bottom_pc": 100,
+        "padding_bottom_sp": 50
       }
     },
     "article-faq": {
@@ -246,7 +252,9 @@
         "faq_ythe3G"
       ],
       "settings": {
-        "title": "FAQ"
+        "title": "FAQ",
+        "padding_bottom_pc": 100,
+        "padding_bottom_sp": 50
       }
     },
     "article-new-item": {
@@ -255,7 +263,7 @@
         "new-item1": {
           "type": "new-item",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -278,7 +286,7 @@
         "new-item2": {
           "type": "new-item",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -301,7 +309,7 @@
         "new-item3": {
           "type": "new-item",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -324,7 +332,7 @@
         "new-item4": {
           "type": "new-item",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -347,7 +355,7 @@
         "new-item5": {
           "type": "new-item",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -370,7 +378,7 @@
         "new-item6": {
           "type": "new-item",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -393,7 +401,7 @@
         "new-item7": {
           "type": "new-item",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -416,7 +424,7 @@
         "new-item8": {
           "type": "new-item",
           "settings": {
-            "url": "",
+            "url": "URLが入ります。",
             "image": "shopify://shop_images/iced-latte-at-coffee-shop-window.jpg",
             "item": "item",
             "item_font_size": 24,
@@ -448,7 +456,9 @@
         "new-item8"
       ],
       "settings": {
-        "title": "新着商品"
+        "title": "新着商品",
+        "padding_bottom_pc": 100,
+        "padding_bottom_sp": 50
       }
     }
   },

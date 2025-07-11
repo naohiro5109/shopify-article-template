@@ -1,37 +1,43 @@
 <section class="{{ section.id }}-heading {{ section.id }}-article-wrapper">
   <div class="{{ section.id }}-article-cont">
     <div class="{{ section.id }}-heading-col2">
-      <figure>
-        <img
-          src="{{ section.settings.image | image_url }}"
-          alt="{{ section.settings.alt }}"
-          width="100%"
-          height="auto"
-          loading="lazy"
-        >
-      </figure>
+      {%- if section.settings.image or section.settings.alt != blank -%}
+        <figure>
+          <img
+            src="{{ section.settings.image | image_url }}"
+            alt="{{ section.settings.alt }}"
+            width="100%"
+            height="auto"
+            loading="lazy"
+          >
+        </figure>
+      {%- endif -%}
       <div>
-        <h1
-          class="{{ section.id }}-heading-h1"
-          style="
-            font-size: {{ section.settings.title_font_size }}px;
-            color: {{ section.settings.title_font_color }};
-            font-weight: {{ section.settings.title_font_weight }};
-          "
-        >
-          {{ section.settings.title }}
-        </h1>
+        {%- if section.settings.title != blank -%}
+          <h1
+            class="{{ section.id }}-heading-h1"
+            style="
+              font-size: {{ section.settings.title_font_size }}px;
+              color: {{ section.settings.title_font_color }};
+              font-weight: {{ section.settings.title_font_weight }};
+            "
+          >
+            {{ section.settings.title }}
+          </h1>
+        {%- endif -%}
         <ul>
           {% for block in section.blocks %}
-            <li
-              style="
-                font-size: {{ block.settings.list_font_size }}px;
-                color: {{ block.settings.list_font_color }};
-                font-weight: {{ block.settings.list_font_weight }};
-              "
-            >
-              {{ block.settings.list }}
-            </li>
+            {%- if block.settings.list != blank -%}
+              <li
+                style="
+                  font-size: {{ block.settings.list_font_size }}px;
+                  color: {{ block.settings.list_font_color }};
+                  font-weight: {{ block.settings.list_font_weight }};
+                "
+              >
+                {{ block.settings.list }}
+              </li>
+            {%- endif -%}
           {% endfor %}
         </ul>
       </div>

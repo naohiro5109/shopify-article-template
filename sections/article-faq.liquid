@@ -1,33 +1,40 @@
 <section class="{{ section.id }}-article-wrapper">
   <div class="{{ section.id }}-article-cont">
-    {% render 'article-title',
-      title: section.settings.title
-    %}
+    {%- if section.settings.title != blank -%}
+      {% render 'article-title',
+        title: section.settings.title
+      %}
+    {%- endif -%}
     <ul>
       {% for block in section.blocks %}
         <li class="{{ section.id }}-accordion {{ section.id }}-js-accordion">
-          <button
-            style="
-              font-size: {{ block.settings.title_font_size }}px;
-              color: {{ block.settings.title_font_color }};
-              font-weight: {{ block.settings.title_font_weight }};
-            "
-            class="{{ section.id }}-accordion-head"
-          >
-            <span>{{ block.settings.title }}</span>
-          </button>
-          <div class="{{ section.id }}-accordion-body">
-            <div
+          {%- if block.settings.title != blank -%}
+            <button
               style="
-                font-size: {{ block.settings.text_font_size }}px;
-                color: {{ block.settings.text_font_color }};
-                font-weight: {{ block.settings.text_font_weight }};
+                font-size: {{ block.settings.title_font_size }}px;
+                color: {{ block.settings.title_font_color }};
+                font-weight: {{ block.settings.title_font_weight }};
               "
-              class="{{ section.id }}-accordion-body-inner"
+              class="{{ section.id }}-accordion-head"
             >
-              <p>{{ block.settings.text }}</p>
+              <span>{{ block.settings.title }}</span>
+            </button>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <div class="{{ section.id }}-accordion-body">
+              <div class="{{ section.id }}-accordion-body-inner">
+                <p
+                  style="
+                    font-size: {{ block.settings.text_font_size }}px;
+                    color: {{ block.settings.text_font_color }};
+                    font-weight: {{ block.settings.text_font_weight }};
+                  "
+                >
+                  {{ block.settings.text }}
+                </p>
+              </div>
             </div>
-          </div>
+          {%- endif -%}
         </li>
       {% endfor %}
     </ul>

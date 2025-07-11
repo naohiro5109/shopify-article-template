@@ -1,19 +1,23 @@
 <section class="{{ section.id }}-article-wrapper">
   <div class="{{ section.id }}-article-cont">
-    {% render 'article-title',
-      title: section.settings.title
-    %}
+    {%- if section.settings.title != blank -%}
+      {% render 'article-title',
+        title: section.settings.title
+      %}
+    {%- endif -%}
     <div class="{{ section.id }}-col3">
       {% for block in section.blocks %}
-        <figure>
-          <img
-            src="{{ block.settings.image | image_url }}"
-            alt="{{ block.settings.alt }}"
-            width="100%"
-            height="auto"
-            loading="lazy"
-          >
-        </figure>
+        {%- if block.settings.image or block.settings.alt != blank -%}
+          <figure>
+            <img
+              src="{{ block.settings.image | image_url }}"
+              alt="{{ block.settings.alt }}"
+              width="100%"
+              height="auto"
+              loading="lazy"
+            >
+          </figure>
+        {%- endif -%}
       {% endfor %}
     </div>
   </div>

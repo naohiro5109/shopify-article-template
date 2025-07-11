@@ -1,61 +1,75 @@
 <section class="{{ section.id }}-article-wrapper">
   <div class="{{ section.id }}-article-cont">
-    {% render 'article-title',
-      title: section.settings.title
-    %}
+    {%- if section.settings.title != blank -%}
+      {% render 'article-title',
+        title: section.settings.title
+      %}
+    {%- endif -%}
     <ul class="{{ section.id }}-col4">
       {% for block in section.blocks %}
         <li class="{{ section.id }}-item-list {{ section.id }}-js-item-list">
-          <a href="{{ block.settings.url }}">
-            <figure>
-              <img
-                src="{{ block.settings.image | image_url }}"
-                alt="{{ block.settings.alt }}"
-                width="100%"
-                height="auto"
-                loading="lazy"
-              >
-            </figure>
-            <h3
-              style="
-                font-size: {{ block.settings.item_font_size }}px;
-                color: {{ block.settings.item_font_color }};
-                font-weight: {{ block.settings.item_font_weight }};
-              "
-            >
-              {{ block.settings.item }}
-            </h3>
-            <p
-              style="
-                font-size: {{ block.settings.price_font_size }}px;
-                color: {{ block.settings.price_font_color }};
-                font-weight: {{ block.settings.price_font_weight }};
-              "
-              class="{{ section.id }}-item-list-price"
-            >
-              ￥{{ block.settings.price }}（税込）
-            </p>
-            <p
-              style="
-                font-size: {{ block.settings.text_font_size }}px;
-                color: {{ block.settings.text_font_color }};
-                font-weight: {{ block.settings.text_font_weight }};
-              "
-              class="{{ section.id }}-item-list-text"
-            >
-              {{ block.settings.text }}
-            </p>
-            <button
-              style="
-                font-size: {{ block.settings.button_font_size }}px;
-                color: {{ block.settings.button_font_color }};
-                font-weight: {{ block.settings.button_font_weight }};
-              "
-              class="{{ section.id }}-item-list-button"
-            >
-              {{ block.settings.button }}
-            </button>
-          </a>
+          {%- if block.settings.url != blank -%}
+            <a href="{{ block.settings.url }}">
+              {%- if block.settings.image != blank -%}
+                <figure>
+                  <img
+                    src="{{ block.settings.image | image_url }}"
+                    alt="{{ block.settings.item }}"
+                    width="100%"
+                    height="auto"
+                    loading="lazy"
+                  >
+                </figure>
+              {%- endif -%}
+              {%- if block.settings.item != blank -%}
+                <h3
+                  style="
+                    font-size: {{ block.settings.item_font_size }}px;
+                    color: {{ block.settings.item_font_color }};
+                    font-weight: {{ block.settings.item_font_weight }};
+                  "
+                >
+                  {{ block.settings.item }}
+                </h3>
+              {%- endif -%}
+              {%- if block.settings.price != blank -%}
+                <p
+                  style="
+                    font-size: {{ block.settings.price_font_size }}px;
+                    color: {{ block.settings.price_font_color }};
+                    font-weight: {{ block.settings.price_font_weight }};
+                  "
+                  class="{{ section.id }}-item-list-price"
+                >
+                  ￥{{ block.settings.price }}（税込）
+                </p>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p
+                  style="
+                    font-size: {{ block.settings.text_font_size }}px;
+                    color: {{ block.settings.text_font_color }};
+                    font-weight: {{ block.settings.text_font_weight }};
+                  "
+                  class="{{ section.id }}-item-list-text"
+                >
+                  {{ block.settings.text }}
+                </p>
+              {%- endif -%}
+              {%- if block.settings.button != blank -%}
+                <button
+                  style="
+                    font-size: {{ block.settings.button_font_size }}px;
+                    color: {{ block.settings.button_font_color }};
+                    font-weight: {{ block.settings.button_font_weight }};
+                  "
+                  class="{{ section.id }}-item-list-button"
+                >
+                  {{ block.settings.button }}
+                </button>
+              {%- endif -%}
+            </a>
+          {%- endif -%}
         </li>
       {% endfor %}
     </ul>
