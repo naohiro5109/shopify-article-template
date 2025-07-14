@@ -1,0 +1,66 @@
+  <li class="{{ section.id }}-item-list {{ section.id }}-js-item-list">
+    {%- if product.url != blank -%}
+      <a href="{{ product.url }}">
+        {%- if product.featured_image != blank -%}
+          <figure>
+            <img
+              src="{{ product.featured_image | image_url }}"
+              alt="{{ product.title }}"
+              width="100%"
+              height="auto"
+              loading="lazy"
+              class="{{ section.id }}-item-list-img"
+            >
+          </figure>
+        {%- endif -%}
+        {%- if product.title != blank -%}
+          <h3
+            style="
+              font-size: {{ section.settings.item_font_size }}px;
+              color: {{ section.settings.item_font_color }};
+              font-weight: {{ section.settings.item_font_weight }};
+            "
+            class="{{ section.id }}-item"
+          >
+            {{ product.title }}
+          </h3>
+        {%- endif -%}
+        {%- if product.price != blank -%}
+          <p
+            style="
+              font-size: {{ section.settings.price_font_size }}px;
+              color: {{ section.settings.price_font_color }};
+              font-weight: {{ section.settings.price_font_weight }};
+            "
+            class="{{ section.id }}-item-list-price"
+          >
+            {{ product.price | money }}（税込）
+          </p>
+        {%- endif -%}
+        {%- if product.description != blank -%}
+          <p
+            style="
+              font-size: {{ section.settings.text_font_size }}px;
+              color: {{ section.settings.text_font_color }};
+              font-weight: {{ section.settings.text_font_weight }};
+            "
+            class="{{ section.id }}-item-list-text"
+          >
+            {{ product.description }}
+          </p>
+        {%- endif -%}
+        {%- if section.settings.button != blank -%}
+          <button
+            style="
+              font-size: {{ section.settings.button_font_size }}px;
+              color: {{ section.settings.button_font_color }};
+              font-weight: {{ section.settings.button_font_weight }};
+            "
+            class="{{ section.id }}-item-list-button"
+          >
+            {{ section.settings.button }}
+          </button>
+        {%- endif -%}
+      </a>
+    {%- endif -%}
+  </li>

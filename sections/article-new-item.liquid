@@ -6,71 +6,9 @@
       %}
     {%- endif -%}
     <ul class="{{ section.id }}-col4">
-      {% for block in section.blocks %}
-        <li class="{{ section.id }}-item-list {{ section.id }}-js-item-list">
-          {%- if block.settings.url != blank -%}
-            <a href="{{ block.settings.url }}">
-              {%- if block.settings.image != blank -%}
-                <figure>
-                  <img
-                    src="{{ block.settings.image | image_url }}"
-                    alt="{{ block.settings.item }}"
-                    width="100%"
-                    height="auto"
-                    loading="lazy"
-                  >
-                </figure>
-              {%- endif -%}
-              {%- if block.settings.item != blank -%}
-                <h3
-                  style="
-                    font-size: {{ block.settings.item_font_size }}px;
-                    color: {{ block.settings.item_font_color }};
-                    font-weight: {{ block.settings.item_font_weight }};
-                  "
-                >
-                  {{ block.settings.item }}
-                </h3>
-              {%- endif -%}
-              {%- if block.settings.price != blank -%}
-                <p
-                  style="
-                    font-size: {{ block.settings.price_font_size }}px;
-                    color: {{ block.settings.price_font_color }};
-                    font-weight: {{ block.settings.price_font_weight }};
-                  "
-                  class="{{ section.id }}-item-list-price"
-                >
-                  ￥{{ block.settings.price }}（税込）
-                </p>
-              {%- endif -%}
-              {%- if block.settings.text != blank -%}
-                <p
-                  style="
-                    font-size: {{ block.settings.text_font_size }}px;
-                    color: {{ block.settings.text_font_color }};
-                    font-weight: {{ block.settings.text_font_weight }};
-                  "
-                  class="{{ section.id }}-item-list-text"
-                >
-                  {{ block.settings.text }}
-                </p>
-              {%- endif -%}
-              {%- if block.settings.button != blank -%}
-                <button
-                  style="
-                    font-size: {{ block.settings.button_font_size }}px;
-                    color: {{ block.settings.button_font_color }};
-                    font-weight: {{ block.settings.button_font_weight }};
-                  "
-                  class="{{ section.id }}-item-list-button"
-                >
-                  {{ block.settings.button }}
-                </button>
-              {%- endif -%}
-            </a>
-          {%- endif -%}
-        </li>
+      {% assign new_collection = collections['new-items'] %}
+      {% for product in new_collection.products limit: 8 %}
+        {% render 'article-item', product: product, section.id: section.id %}
       {% endfor %}
     </ul>
     <div class="{{ section.id }}-more-button-wrapper">
@@ -129,6 +67,16 @@
   }
 
   /* item list */
+  .{{ section.id }}-item-list-img {
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+  .{{ section.id }}-item {
+    padding-bottom: 10px;
+  }
   .{{ section.id }}-item-list-price {
     padding-bottom: 10px;
   }
@@ -224,6 +172,115 @@
       },
       {
         "type": "range",
+        "id": "item_font_size",
+        "label": "フォントサイズ",
+        "min": 14,
+        "max": 32,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "item_font_color",
+        "label": "文字色",
+        "default": "#000000"
+      },
+      {
+        "type": "select",
+        "id": "item_font_weight",
+        "label": "フォント太さ",
+        "options": [
+          { "value": "400", "label": "細字" },
+          { "value": "500", "label": "ノーマル" },
+          { "value": "700", "label": "太字" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "range",
+        "id": "price_font_size",
+        "label": "フォントサイズ",
+        "min": 14,
+        "max": 32,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "price_font_color",
+        "label": "文字色",
+        "default": "#000000"
+      },
+      {
+        "type": "select",
+        "id": "price_font_weight",
+        "label": "フォント太さ",
+        "options": [
+          { "value": "400", "label": "細字" },
+          { "value": "500", "label": "ノーマル" },
+          { "value": "700", "label": "太字" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "range",
+        "id": "text_font_size",
+        "label": "フォントサイズ",
+        "min": 14,
+        "max": 32,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "text_font_color",
+        "label": "文字色",
+        "default": "#000000"
+      },
+      {
+        "type": "select",
+        "id": "text_font_weight",
+        "label": "フォント太さ",
+        "options": [
+          { "value": "400", "label": "細字" },
+          { "value": "500", "label": "ノーマル" },
+          { "value": "700", "label": "太字" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "textarea",
+        "id": "button",
+        "label": "ボタンテキスト"
+      },
+      {
+        "type": "range",
+        "id": "button_font_size",
+        "label": "フォントサイズ",
+        "min": 14,
+        "max": 32,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "button_font_color",
+        "label": "文字色",
+        "default": "#000000"
+      },
+      {
+        "type": "select",
+        "id": "button_font_weight",
+        "label": "フォント太さ",
+        "options": [
+          { "value": "400", "label": "細字" },
+          { "value": "500", "label": "ノーマル" },
+          { "value": "700", "label": "太字" }
+        ],
+        "default": "400"
+      },
+      {
+        "type": "range",
         "id": "padding_bottom_pc",
         "label": "下部パディング(PC)",
         "max": 100,
@@ -239,148 +296,6 @@
         "min": 0,
         "step": 5,
         "default": 50
-      }
-    ],
-    "blocks": [
-      {
-        "type": "new-item",
-        "name": "新着商品",
-        "settings": [
-          {
-            "type": "textarea",
-            "id": "url",
-            "label": "商品詳細の遷移先(URL)"
-          },
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "商品画像"
-          },
-          {
-            "type": "textarea",
-            "id": "item",
-            "label": "商品名"
-          },
-          {
-            "type": "range",
-            "id": "item_font_size",
-            "label": "フォントサイズ",
-            "min": 14,
-            "max": 32,
-            "default": 16,
-            "unit": "px"
-          },
-          {
-            "type": "color",
-            "id": "item_font_color",
-            "label": "文字色",
-            "default": "#000000"
-          },
-          {
-            "type": "select",
-            "id": "item_font_weight",
-            "label": "フォント太さ",
-            "options": [
-              { "value": "400", "label": "細字" },
-              { "value": "500", "label": "ノーマル" },
-              { "value": "700", "label": "太字" }
-            ],
-            "default": "400"
-          },
-          {
-            "type": "textarea",
-            "id": "price",
-            "label": "価格"
-          },
-          {
-            "type": "range",
-            "id": "price_font_size",
-            "label": "フォントサイズ",
-            "min": 14,
-            "max": 32,
-            "default": 16,
-            "unit": "px"
-          },
-          {
-            "type": "color",
-            "id": "price_font_color",
-            "label": "文字色",
-            "default": "#000000"
-          },
-          {
-            "type": "select",
-            "id": "price_font_weight",
-            "label": "フォント太さ",
-            "options": [
-              { "value": "400", "label": "細字" },
-              { "value": "500", "label": "ノーマル" },
-              { "value": "700", "label": "太字" }
-            ],
-            "default": "400"
-          },
-          {
-            "type": "textarea",
-            "id": "text",
-            "label": "商品説明テキスト"
-          },
-          {
-            "type": "range",
-            "id": "text_font_size",
-            "label": "フォントサイズ",
-            "min": 14,
-            "max": 32,
-            "default": 16,
-            "unit": "px"
-          },
-          {
-            "type": "color",
-            "id": "text_font_color",
-            "label": "文字色",
-            "default": "#000000"
-          },
-          {
-            "type": "select",
-            "id": "text_font_weight",
-            "label": "フォント太さ",
-            "options": [
-              { "value": "400", "label": "細字" },
-              { "value": "500", "label": "ノーマル" },
-              { "value": "700", "label": "太字" }
-            ],
-            "default": "400"
-          },
-          {
-            "type": "textarea",
-            "id": "button",
-            "label": "ボタンテキスト"
-          },
-          {
-            "type": "range",
-            "id": "button_font_size",
-            "label": "フォントサイズ",
-            "min": 14,
-            "max": 32,
-            "default": 16,
-            "unit": "px"
-          },
-          {
-            "type": "color",
-            "id": "button_font_color",
-            "label": "文字色",
-            "default": "#000000"
-          },
-          {
-            "type": "select",
-            "id": "button_font_weight",
-            "label": "フォント太さ",
-            "options": [
-              { "value": "400", "label": "細字" },
-              { "value": "500", "label": "ノーマル" },
-              { "value": "700", "label": "太字" }
-            ],
-            "default": "400"
-          }
-        ]
       }
     ]
   }
