@@ -7,13 +7,15 @@
     {%- endif -%}
     <ul class="{{ section.id }}-col4">
       {% assign new_collection = collections['new-items'] %}
-      {% for product in new_collection.products limit: 8 %}
-        {% render 'article-item', product: product, section.id: section.id %}
+      {% for product in new_collection.products limit: section.settings.limit %}
+        {% render 'article-item', product: product, section_id: section.id %}
       {% endfor %}
     </ul>
-    <div class="{{ section.id }}-more-button-wrapper">
-      <button class="{{ section.id }}-more-button {{ section.id }}-js-more-button">もっと見る</button>
-    </div>
+    {%- if new_collection.products_count > 4 and section.settings.limit > 4 -%}
+      <div class="{{ section.id }}-more-button-wrapper">
+        <button class="{{ section.id }}-more-button {{ section.id }}-js-more-button">もっと見る</button>
+      </div>
+    {%- endif -%}
   </div>
 </section>
 
@@ -169,6 +171,14 @@
         "type": "textarea",
         "id": "title",
         "label": "セクションタイトル"
+      },
+      {
+        "type": "range",
+        "id": "limit",
+        "label": "表示アイテム数",
+        "min": 1,
+        "max": 12,
+        "default": 8
       },
       {
         "type": "range",

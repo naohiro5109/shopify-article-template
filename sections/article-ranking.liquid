@@ -1,14 +1,19 @@
 <section class="{{ section.id }}-article-wrapper">
   <div class="{{ section.id }}-article-cont">
     {%- if section.settings.title != blank -%}
-      {% render 'article-title', title: section.settings.title, section.id: section.id %}
+      {% render 'article-title', title: section.settings.title, section_id: section.id %}
     {%- endif -%}
     <ul class="{{ section.id }}-col2">
       {% assign ranking_collection = collections['ranking'] %}
-      {% for product in ranking_collection.products limit: 8 %}
-        {% render 'article-item', product: product, section.id: section.id %}
+      {% for product in ranking_collection.products limit: section.settings.limit %}
+        {% render 'article-item', product: product, section_id: section.id %}
       {% endfor %}
     </ul>
+    {%- if ranking_collection.products_count > 4 and section.settings.limit > 4 -%}
+      <div class="{{ section.id }}-more-button-wrapper">
+        <button class="{{ section.id }}-more-button {{ section.id }}-js-more-button">もっと見る</button>
+      </div>
+    {%- endif -%}
   </div>
 </section>
 
@@ -78,6 +83,38 @@
     background-color: #D9D9D9;
   }
 
+  /* more button */
+  .{{ section.id }}-more-button-wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .{{ section.id }}-more-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+  }
+  .{{ section.id }}-more-button::after {
+    content: "";
+    display: block;
+    margin-top: 6px;
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #AAAAAA;
+    border-right: 3px solid #AAAAAA;
+    transform: translateY(-50%) rotate(135deg);
+  }
+  .hidden {
+    display: none;
+  }
+  .{{ section.id }}-more-button.open::after {
+    margin-top: 14px;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
   @media screen and (max-width: 768px) {
     .{{ section.id }}-article-wrapper {
       padding-bottom: {{ section.settings.padding_bottom_sp }}px;
@@ -90,6 +127,32 @@
   }
 {% endstyle %}
 
+<script>
+  document.addEventListener('DOMContentLoaded', ()=> {
+    const moreButtons = document.querySelectorAll('.{{ section.id }}-js-more-button');
+    const itemLists = document.querySelectorAll('.{{ section.id }}-js-item-list');
+
+    if (itemLists.length && moreButtons.length) {
+      itemLists.forEach((itemList, index) => {
+        if (index > 3) {
+          itemList.classList.add('hidden');
+          moreButtons.forEach((moreButton) => {
+            moreButton.addEventListener('click', () => {
+              if (itemList.classList.contains('hidden')) {
+                itemList.classList.remove('hidden');
+                moreButton.classList.add('open');
+              } else {
+                itemList.classList.add('hidden');
+                moreButton.classList.remove('open');
+              }
+            });
+          });
+        }
+      });
+    };
+  });
+</script>
+
 {% schema %}
   {
     "name": "ブログ記事：ランキング",
@@ -98,6 +161,14 @@
         "type": "textarea",
         "id": "title",
         "label": "セクションタイトル"
+      },
+      {
+        "type": "range",
+        "id": "limit",
+        "label": "表示アイテム数",
+        "min": 1,
+        "max": 12,
+        "default": 4
       },
       {
         "type": "range",

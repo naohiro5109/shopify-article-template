@@ -1,4 +1,4 @@
-  <li class="{{ section.id }}-item-list {{ section.id }}-js-item-list">
+  <li class="{{ section_id }}-item-list {{ section_id }}-js-item-list">
     {%- if product.url != blank -%}
       <a href="{{ product.url }}">
         {%- if product.featured_image != blank -%}
@@ -9,7 +9,7 @@
               width="100%"
               height="auto"
               loading="lazy"
-              class="{{ section.id }}-item-list-img"
+              class="{{ section_id }}-item-list-img"
             >
           </figure>
         {%- endif -%}
@@ -20,7 +20,7 @@
               color: {{ section.settings.item_font_color }};
               font-weight: {{ section.settings.item_font_weight }};
             "
-            class="{{ section.id }}-item"
+            class="{{ section_id }}-item"
           >
             {{ product.title }}
           </h3>
@@ -32,7 +32,7 @@
               color: {{ section.settings.price_font_color }};
               font-weight: {{ section.settings.price_font_weight }};
             "
-            class="{{ section.id }}-item-list-price"
+            class="{{ section_id }}-item-list-price"
           >
             {{ product.price | money }}（税込）
           </p>
@@ -44,7 +44,7 @@
               color: {{ section.settings.text_font_color }};
               font-weight: {{ section.settings.text_font_weight }};
             "
-            class="{{ section.id }}-item-list-text"
+            class="{{ section_id }}-item-list-text"
           >
             {{ product.description }}
           </p>
@@ -56,7 +56,7 @@
               color: {{ section.settings.button_font_color }};
               font-weight: {{ section.settings.button_font_weight }};
             "
-            class="{{ section.id }}-item-list-button"
+            class="{{ section_id }}-item-list-button"
           >
             {{ section.settings.button }}
           </button>
