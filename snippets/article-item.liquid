@@ -1,18 +1,21 @@
   <li class="{{ section_id }}-item-list {{ section_id }}-js-item-list">
     {%- if product.url != blank -%}
       <a href="{{ product.url }}">
-        {%- if product.featured_image != blank -%}
-          <figure>
-            <img
-              src="{{ product.featured_image | image_url }}"
-              alt="{{ product.title }}"
-              width="100%"
-              height="auto"
-              loading="lazy"
-              class="{{ section_id }}-item-list-img"
-            >
-          </figure>
-        {%- endif -%}
+        <div class="{{ section_id }}-item-img-wrapper">
+          {%- if product.featured_image != blank -%}
+            <figure>
+              <img
+                src="{{ product.featured_image | image_url }}"
+                alt="{{ product.title }}"
+                width="100%"
+                height="auto"
+                loading="lazy"
+                class="{{ section_id }}-item-list-img"
+              >
+            </figure>
+            <p class="{{ section_id }}-item-rank {{ section_id }}-item-rank-{{ rank }}">{{ rank }}</p>
+          {%- endif -%}
+        </div>
         {%- if product.title != blank -%}
           <h3
             style="

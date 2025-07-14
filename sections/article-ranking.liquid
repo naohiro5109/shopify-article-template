@@ -6,7 +6,7 @@
     <ul class="{{ section.id }}-col2">
       {% assign ranking_collection = collections['ranking'] %}
       {% for product in ranking_collection.products limit: section.settings.limit %}
-        {% render 'article-item', product: product, section_id: section.id %}
+        {% render 'article-item', product: product, section_id: section.id, rank: forloop.index %}
       {% endfor %}
     </ul>
     {%- if ranking_collection.products_count > 4 and section.settings.limit > 4 -%}
@@ -62,12 +62,33 @@
   }
 
   /* item list */
+  .{{ section.id }}-item-img-wrapper {
+    position: relative;
+  }
   .{{ section.id }}-item-list-img {
     display: block;
     object-fit: cover;
     aspect-ratio: 1 / 1;
     padding-bottom: 10px;
     width: 100%;
+  }
+  .{{ section.id }}-item-rank {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  .{{ section.id }}-item-rank-1 {
+    background: gold;
+  }
+  .{{ section.id }}-item-rank-2 {
+    background: silver;
+  }
+  .{{ section.id }}-item-rank-3 {
+    background: #cd7f32;
   }
   .{{ section.id }}-item {
     padding-bottom: 10px;
