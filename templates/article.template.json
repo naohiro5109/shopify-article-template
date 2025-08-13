@@ -19,8 +19,8 @@
     "article-heading": {
       "type": "article-heading",
       "blocks": {
-        "textarea_WfVtNH": {
-          "type": "textarea",
+        "list_WfVtNH": {
+          "type": "list",
           "settings": {
             "list": "・初回無料",
             "list_font_size": 16,
@@ -28,8 +28,8 @@
             "list_font_weight": "400"
           }
         },
-        "textarea_n8pb94": {
-          "type": "textarea",
+        "list_n8pb94": {
+          "type": "list",
           "settings": {
             "list": "・2回目～5%OFF",
             "list_font_size": 16,
@@ -37,8 +37,8 @@
             "list_font_weight": "400"
           }
         },
-        "textarea_eWDxBd": {
-          "type": "textarea",
+        "list_eWDxBd": {
+          "type": "list",
           "settings": {
             "list": "・お客様に合わせたお届けサイクル",
             "list_font_size": 16,
@@ -46,8 +46,8 @@
             "list_font_weight": "400"
           }
         },
-        "textarea_VnWqwj": {
-          "type": "textarea",
+        "list_VnWqwj": {
+          "type": "list",
           "settings": {
             "list": "・4か月以降に解約可能/手数料なし",
             "list_font_size": 16,
@@ -57,10 +57,10 @@
         }
       },
       "block_order": [
-        "textarea_WfVtNH",
-        "textarea_n8pb94",
-        "textarea_eWDxBd",
-        "textarea_VnWqwj"
+        "list_WfVtNH",
+        "list_n8pb94",
+        "list_eWDxBd",
+        "list_VnWqwj"
       ],
       "settings": {
         "image": "shopify://shop_images/retail-shopping-package.jpg",

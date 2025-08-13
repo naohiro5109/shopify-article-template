@@ -1,6 +1,6 @@
   <li class="{{ section_id }}-item-list {{ section_id }}-js-item-list">
     {%- if product.url != blank -%}
-      <a href="{{ product.url }}">
+      <a href="{{ product.url }}" class="{{ section_id }}-item-list-link">
         <div class="{{ section_id }}-item-img-wrapper">
           {%- if product.featured_image != blank -%}
             <figure>
@@ -53,16 +53,18 @@
           </p>
         {%- endif -%}
         {%- if section.settings.button != blank -%}
-          <button
-            style="
-              font-size: {{ section.settings.button_font_size }}px;
-              color: {{ section.settings.button_font_color }};
-              font-weight: {{ section.settings.button_font_weight }};
-            "
-            class="{{ section_id }}-item-list-button"
-          >
-            {{ section.settings.button }}
-          </button>
+          <div class="{{ section_id }}-item-list-button-wrapper">
+            <button
+              style="
+                font-size: {{ section.settings.button_font_size }}px;
+                color: {{ section.settings.button_font_color }};
+                font-weight: {{ section.settings.button_font_weight }};
+              "
+              class="{{ section_id }}-item-list-button"
+            >
+              {{ section.settings.button }}
+            </button>
+          </div>
         {%- endif -%}
       </a>
     {%- endif -%}

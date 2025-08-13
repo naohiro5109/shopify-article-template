@@ -42,12 +42,14 @@
     color: #000;
   }
   button {
-    cursor: pointer;
     padding: 0;
     background-color: transparent;
     border: none;
   }
 
+  .{{ section.id }}-item-list-link {
+    cursor: pointer;
+  }
   .{{ section.id }}-article-wrapper {
     padding-bottom: {{ section.settings.padding_bottom_pc }}px;
   }
@@ -87,7 +89,11 @@
   .{{ section.id }}-item-list-text {
     padding-bottom: 14px;
   }
+  .{{ section.id }}-item-list-button-wrapper {
+    width: 100%;
+  }
   .{{ section.id }}-item-list-button {
+    cursor: pointer;
     padding: 10px 24px;
     background-color: #D9D9D9;
   }
